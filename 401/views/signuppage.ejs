@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sign Up</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image: url("weather.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* filter: blur(40px); */
+  }
+  .signup-container {
+    background-color:rgba(255, 255, 255, 0.112);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 30px;
+    width: 400px;
+    text-align: center;
+    opacity: 0.9;
+  }
+  .signup-container h2 {
+    margin-bottom: 20px;
+    color: #333333;
+    
+  }
+  .signup-form {
+    text-align: left;
+  }
+  .signup-form label {
+    display: block;
+    margin-bottom: 5px;
+    color: #666666;
+  }
+  .signup-form button {
+    cursor: pointer;
+    background-color: #007bff;
+    border: none;
+    color: #ffffff;
+    border-radius: 5px;
+    padding: 10px 20px;
+    
+  }
+  .signup-form input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #cccccc;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border-radius: 20px;;
+    
+  }
+  .errmsg{
+    background-color: red;
+    color: white;
+    border-radius: 30px;;
+  }
+  .signup-form button:hover {
+    background-color: #0057b4;
+  }
+</style>
+</head>
+<body>
+<div class="signup-container">
+  <%if(locals.register){%>
+    <div class="errmsg">
+        <%= register%>
+    </div>
+<%}else{%>
+    <h2>Create Account</h2>
+<%}%>
+  <form class="signup-form" method="post" action="signupsubmit">
+    <label for="fullname">&emsp;Full name</label>
+    <input type="text" id="username" name="fullname" placeholder="enter username" required>
+    
+    <label for="email">&emsp;Email</label>
+    <input type="email" id="email" name="email" placeholder="enter email" required>
+    
+    <label for="password">&emsp;Password</label>
+    <input type="password" id="password" name="password" placeholder="enter password" required>
+    
+    <button type="submit">Sign Up</button>
+    <P>Have an account? &emsp;<a href="http://localhost:3000/login">login</a></P>
+  </form>
+</div>
+</body>
+</html>

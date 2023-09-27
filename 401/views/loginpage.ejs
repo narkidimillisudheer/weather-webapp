@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image: url("weather.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .login-container {
+    background-color: rgba(255, 255, 255, 0.112);;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 30px;
+    width: 400px;
+    text-align: center;
+  }
+  .login-form {
+    text-align: left;
+  }
+  .login-container h2 {
+    
+    color: #333333;
+    margin-bottom: 20px;
+  }
+  
+  .login-form label {
+    display: block;
+    margin-bottom: 5px;
+    color: #666666;
+  }.login-form button {
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 10px 20px;
+  }
+  .login-form input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #cccccc;
+    border-radius: 20px;
+    margin-bottom: 15px;
+  }
+  .errmsg{
+    background-color: green;
+    color: white;
+    border-radius: 30px;;
+  }
+  .login-form button:hover {
+    background-color: #0056b3;
+  }
+  .login-form .forgot-password {
+    color: #999999;
+  }
+</style>
+</head>
+<body>
+<div class="login-container">
+  <h2>Login to Your Account</h2>
+  <% if(locals.logout){ %>
+    <div class="errmsg">
+        <span>logout Successfully...</span> 
+    </div>    
+<% } %>
+  <form class="login-form" method="post" action="loginsubmit">
+    <label for="username">Username or Email</label>
+    <input type="text" id="username" name="email" placeholder="enter username" required>
+    
+    <label for="password">Password</label>
+    <input type="password" id="password" name="password" placeholder="enter password" required>
+    
+    <button type="submit">Login</button>
+    <div class="forgot-password">Don't have an account ? <a href="http://localhost:3000/signup">sign up</a></div>
+  </form>
+</div>
+</body>
+</html>

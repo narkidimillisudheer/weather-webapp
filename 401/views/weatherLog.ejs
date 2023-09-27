@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather page</title>
+    <style>
+        *{
+    margin: 0;
+    padding: 0;
+     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    }
+body{
+    background: linear-gradient(90deg, #32C7F6 22.55%, #007FF4 98.73%);
+}
+.main-container{
+ width: 1450px;
+height: 680px;
+padding-top: 10px;
+flex-shrink: 0;
+border-radius: 13px;
+background: #ffffff;
+box-shadow: 0px 4px 24px 0px rgba(0, 0, 0, 0.25);
+margin-left: 35px;
+margin-top: 30px;
+}
+.container{
+    display: flex;
+    gap: 44rem;
+    margin-top: 20px;
+}
+.logo{
+    font-size: 30px;
+    font-weight:bolder;
+    margin-left: 50px;
+    color: #0a4bad;
+}
+ul{
+    list-style: none;
+     display: grid;
+     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+     gap: 50px;
+     color:rgb(167, 162, 162);
+     
+}
+a{
+    text-decoration: none;
+}
+button{
+     background-color:rgb(247, 206, 26);
+     color: white;
+     border-radius: 17px;
+    border: none;
+    padding: 6px 25px;
+}
+.Button{
+    margin-top: 20px;
+}
+.container-2{
+    display: grid;
+    grid-template-columns: 2fr  1fr;
+    padding-top: 9%;
+    padding-left: 50px;
+}
+h2{
+    color: #212dad;
+    font-size: 30px;
+    font-weight: bolder;
+}
+.h-2{
+    margin-top: 7px ;
+}
+p{
+    margin-top: 10px;
+}
+img{
+    width: 600px;
+    height: 350px;
+}
+    </style>
+</head>
+<body>
+    <div class="main-container">
+    <header>
+        <div class="container">
+        <div class="logo">Weather</div>
+        <div class="list">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="">Profile</a></li>
+                <li><a href="/dashboard">weather</a></li>
+                <li><a href="/history">History</a></li>
+                <li><a href="/logout">Logout</a></li>
+            </ul>
+        </div>
+    </div>
+    </header>
+    <div class="container-2">
+    <div class="left-side">
+        <h2>Weather</h2>
+        <h2 class="h-2">Forecast</h2>
+        <p>
+            Weather is the state of the atmosphere, describing for example the degree to which it is hot or cold, wet or dry, calm or stormy, clear or cloudy. On Earth, most weather phenomena occur in the lowest layer of the planet's atmosphere, the troposphere, just below the stratosphere. Weather refers to day-to-day temperature, precipitation, and other atmospheric conditions, whereas climate is the term for the averaging of atmospheric conditions over longer periods of time.When used without qualification, "weather" is generally understood to mean the weather of Earth.Weather is driven by air pressure, temperature, and moisture differences between one place and another.
+        </p>
+        <a href="/dashboard"><button class="Button">Weather</button></a>
+    </div>
+    <div class="right-side">
+        <img src="https://i.ibb.co/QrTtd52/Flat-design-concept-of-weather-forecast-Graphics-8582105-2-580x386.jpg" alt="Flat-design-concept-of-weather-forecast-Graphics-8582105-2-580x386" border="0">
+    </div>
+</div>
+</div>
+</body>
+</html>

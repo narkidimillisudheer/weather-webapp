@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles.css">
+    <title>Weather Forecast</title>
+    <style>
+        #box{
+    height:270px;
+    width:220px;
+    background-color:rgb(108, 117, 124);
+    border-radius: 15px;
+    padding: 5px;
+    color: white;
+    font-size: large;
+}
+.forecast{
+height:350px;
+width:1000px;
+position:absolute;
+left:460px;
+bottom:-40px;
+display: flex;
+justify-content: space-between;
+}
+    </style>
+</head>
+<body>
+    <h1>4-Day Weather Forecast</h1>
+        <div class="forecast">
+        <% forecastData.forEach(day => { %>
+            
+            <div id="box">
+                <p>(<span><%= day.date %> </span>)</p>
+                <img id="img2"src="<%= day.description %>">
+                <p>temp:<%= day.temperature %>&#8451;</p>
+                <p>Wind: <%= day.temperature %></p>
+                <p>Humidity:<%= day.humidity %></p>
+            </div>
+        
+        <% }); %>
+    </div>
+</body>
+</html>

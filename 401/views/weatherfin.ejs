@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>weather</title>
+<style>
+    body{
+        background-color: rgb(228,242,253);
+    }
+.heading{
+height:60px;
+background-color: rgb(83, 115, 238);
+color: white;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+.details{
+height:850px;
+width:450px;
+padding:5px 5px 5px 5px;
+}
+.display{
+height:250px;
+width:1000px;
+position:absolute;
+left:460px;
+bottom:360px;
+background-color:rgb(83, 115, 238) ;
+color: white;
+border-radius: 10px;
+padding:10px;
+}
+#inbox{
+    height:40px;
+    width:400px;
+    position:relative;
+    left:10px;
+    font-size: large;
+}
+.forecast{
+height:350px;
+width:1000px;
+position:absolute;
+left:460px;
+bottom:-40px;
+display: flex;
+justify-content: space-between;
+}
+#searchbtn{
+    height:40px;
+    width:407px;
+    background-color: rgb(83, 115, 238);
+    color: white;
+    position:relative;
+    left:10px;
+    font-size: large;
+    border-radius: 8px;
+}
+#img1{
+    height:200px;
+    width:160px;
+    position:relative;
+    bottom:190px;
+    left:820px;
+}
+#box{
+    height:270px;
+    width:220px;
+    background-color:rgb(108, 117, 124);
+    border-radius: 15px;
+    padding: 5px;
+    color: white;
+    font-size: large;
+}
+#days{
+    position: absolute;
+    left:460px;
+    top:370px;
+}
+.hr-container {
+    display: flex;
+    align-items: center;
+    text-align: center;
+  }
+  .hr-line {
+    flex-grow: 1;
+    border: none;
+    border-top: 1px solid #ccc;
+    margin: 0;
+  }
+  .hr-text {
+    padding: 0 10px;
+    color: #777;
+  }
+  #currentbtn{
+    height:40px;
+    width:407px;
+    background-color: rgb(108, 117, 124);
+    color: white;
+    position:relative;
+    left:10px;
+    font-size: large;
+    border-radius: 8px;
+  }
+  #getbtn{
+    height:40px;
+    width:407px;
+    background-color: rgb(108, 117, 124);
+    color: white;
+    position:relative;
+    left:10px;
+    font-size: large;
+    border-radius: 8px;
+  }
+  .logout{
+    height:40px;
+    width:90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(108, 117, 124);
+    color: white;
+    border-radius: 30px;
+    position: relative;
+    top:230px;
+  }
+  a{
+    text-decoration: none;
+    color: white;
+
+  }
+</style>
+</head>
+<body>
+<div class="main">
+<div class="heading">
+<center><h1>Weather Dashboard</h1></center>
+</div>
+<div class="details">
+    <form action="/manual" method="post">
+        <br>
+        <br>
+    <h1>&nbsp;Enter a city</h1>
+    <input id="inbox" type="text" name="location" placeholder="Eg:Bhimavaram,Mandapeta">
+    <br>
+    <br>
+    <br>
+    <button  id="searchbtn" type="submit">Search</button>
+</form>
+    <br>
+    <br>
+    <div class="hr-container">
+        <hr class="hr-line">
+        <span class="hr-text">or</span>
+        <hr class="hr-line">
+      </div>
+      <br>
+      <br>
+        <button id="currentbtn" type="submit">Use current location</button>
+        <div class="logout">
+            <img src="https://cdn-icons-png.flaticon.com/512/126/126467.png" height="30px" width="30px"><a href="/logout">logout</a>
+        </div>
+</div>
+</div>
+<div class="display">
+    <h1><%= place %>(<%= datetime %>)</h1>
+    <h2>Temperature:<%= temp %>&#8451;</h2>
+    <h2>Wind:<%= wind %>Mph</h2>
+    <h2>Humidity:<%= humidity %>%</h2>
+    <img id="img1"src="<%= icon %>">
+</div>
+<h1 id="days">4 day forecast</h1>
+
+<% if (forecastData) { %>
+<div class="forecast">
+    <% forecastData.forEach(day => { %>
+        
+        <div id="box">
+            <p>(<span><%= day.date %> </span>)</p>
+            <img id="img2"src="<%= day.description %>">
+            <p>Temp:<%= day.temperature %>&#8451;</p>
+            <p>Wind: <%= day.wind %>Mph</p>
+            <p>Humidity:<%= day.humidity %>%</p>
+        </div>
+    
+    <% }); %>
+<% } %>
+</div>
+</body>
+</html>
